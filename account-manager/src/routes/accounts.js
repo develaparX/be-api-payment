@@ -8,6 +8,7 @@ async function accountRoutes(fastify, options) {
   fastify.put('/accounts/:accountId', { preHandler: authenticateToken }, accountController.updateAccount);
   fastify.delete('/accounts/:accountId', { preHandler: authenticateToken }, accountController.deleteAccount);
 
+  // for transactions
   fastify.put('/accounts/:accountId/debit', { preHandler: [authenticateToken] }, accountController.debitAccount);
   fastify.put('/accounts/:accountId/credit', { preHandler: [verifyInternalApiKey] }, accountController.creditAccount);
 }

@@ -14,15 +14,20 @@ model Transaction {
     fromAccountId String
     toAddress     String?
     status        String
-    type          String // Add this line if you want to use 'type'
+    type          String
     timestamp     DateTime @default(now())
+    userId        String // Add this line
 }
 
 model RecurringPayment {
-    id              String   @id @default(uuid())
+    id              String    @id @default(uuid())
     accountId       String
+    toAccountId     String // Menambahkan toAccountId
     amount          Float
     currency        String
     interval        String
     nextPaymentDate DateTime
+    lastPaymentDate DateTime? // Menyimpan tanggal pembayaran terakhir
+    userId          String
+    active          Boolean   @default(true) // Menambahkan field status active
 }

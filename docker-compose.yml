@@ -1,35 +1,53 @@
 version: '3.8'
+
 services:
   account-manager:
-    build: ./account-manager
+    build:
+      context: ./account-manager
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/accountdb
-      - SUPABASE_URL=your_supabase_url
-      - SUPABASE_KEY=your_supabase_key
+      - DATABASE_URL=postgresql://<user>:<password>@db:5432/account_db
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - INTERNAL_API_KEY=${INTERNAL_API_KEY}
     depends_on:
       - db
 
   payment-manager:
-    build: ./payment-manager
+    build:
+      context: ./payment-manager
+      dockerfile: Dockerfile
     ports:
       - "3001:3001"
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/paymentdb
-      - SUPABASE_URL=your_supabase_url
-      - SUPABASE_KEY=your_supabase_key
+      - ACCOUNT_MANAGER_URL=http://account-manager:3000
+      - DATABASE_URL=postgresql://<user>:<password>@db:5432/payment_db
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - INTERNAL_API_KEY=${INTERNAL_API_KEY}
     depends_on:
       - db
 
   db:
-    image: postgres:13
+    image: postgres:15
     environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=accountdb
+      POSTGRES_USER: <user>
+      POSTGRES_PASSWORD: <password>
+      POSTGRES_DB: account_db
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  db_payment:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: <user>
+      POSTGRES_PASSWORD: <password>
+      POSTGRES_DB: payment_db
+    volumes:
+      - pgdata_payment:/var/lib/postgresql/data
+
 volumes:
   pgdata:
+  pgdata_payment:

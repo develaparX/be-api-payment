@@ -84,7 +84,6 @@ async function addTransactionHistory(data) {
 
 module.exports = {
   getTransactions,
-  createTransaction,
   updateTransaction,
   deleteTransaction,
   addTransactionHistory,

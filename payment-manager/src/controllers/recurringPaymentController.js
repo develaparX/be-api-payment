@@ -1,22 +1,50 @@
-const { createRecurringPayment } = require('../services/recurringPaymentService');
+const recurringPaymentService = require('../services/recurringPaymentService');
 
-async function handleSetupRecurringPayment(request, reply) {
-  const { accountId, amount, currency, interval } = request.body;
+async function createRecurringPayment(req, res) {
+  const userId = req.userId; // Diperoleh dari middleware
+  const { accountId, amount, currency, interval, toAccountId } = req.body;
 
   try {
-    const recurringPayment = await createRecurringPayment({
+    const recurringPayment = await recurringPaymentService.createRecurringPayment({
       accountId,
+      toAccountId,
       amount,
       currency,
       interval,
-      nextPaymentDate: new Date(Date.now() + 24 * 60 * 60 * 1000),
+      userId,
+      active: true,
+      nextPaymentDate: new Date() // Mulai dari hari ini
     });
-    reply.code(200).send(recurringPayment);
+    res.status(201).json(recurringPayment);
   } catch (error) {
-    reply.code(400).send({ error: error.message });
+    res.status(500).json({ error: 'Failed to create recurring payment' });
+  }
+}
+
+async function getAllRecurringPayments(req, res) {
+  const userId = req.userId; // Diperoleh dari middleware
+
+  try {
+    const payments = await recurringPaymentService.getAllRecurringPaymentsByUserId(userId);
+    res.status(200).json(payments);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve recurring payments' });
+  }
+}
+
+async function deactivateRecurringPayment(req, res) {
+  const { id } = req.params;
+
+  try {
+    await recurringPaymentService.deactivateRecurringPayment(id);
+    res.status(200).json({ message: 'Recurring payment deactivated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to deactivate recurring payment' });
   }
 }
 
 module.exports = {
-  handleSetupRecurringPayment
+  createRecurringPayment,
+  getAllRecurringPayments,
+  deactivateRecurringPayment
 };
