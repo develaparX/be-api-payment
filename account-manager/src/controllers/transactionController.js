@@ -30,11 +30,16 @@ async function deleteTransaction(req, reply) {
     const { transactionId } = req.params;
     const { userId } = req.user;
     await transactionService.deleteTransaction(transactionId, userId);
-    reply.status(204).send();
+
+    reply.status(200).send({
+      status: 'success',
+      message: 'Transaction History Deleted Successfully',
+    });
   } catch (error) {
     reply.status(400).send({ error: error.message });
   }
 }
+
 
 async function addTransactionHistory(request, reply) {
   try {

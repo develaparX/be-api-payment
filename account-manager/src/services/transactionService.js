@@ -44,7 +44,7 @@ async function deleteTransaction(transactionId, userId) {
   const transaction = await prisma.transactionHistory.findFirst({
     where: {
       id: transactionId,
-      account: {
+      Account: { // Change 'account' to 'Account'
         userId: userId,
       },
     },

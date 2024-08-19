@@ -1,0 +1,338 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "PAYMENT-API",
+    "collectionId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+    "dateExported": "2024-08-19T22:58:09.359Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "b4414fe8-4da7-4b3b-b925-7bc0a839d127",
+            "name": "account-manager",
+            "containerId": "",
+            "created": "2024-08-19T18:42:42.946Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "payment-manager",
+            "containerId": "",
+            "created": "2024-08-19T18:42:50.825Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "f4ce4e24-4f05-479a-970c-675a3a6beb51",
+            "name": "auth",
+            "containerId": "b4414fe8-4da7-4b3b-b925-7bc0a839d127",
+            "created": "2024-08-19T18:42:56.839Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "82062c1e-725a-405b-8773-646b5056ef88",
+            "name": "account",
+            "containerId": "b4414fe8-4da7-4b3b-b925-7bc0a839d127",
+            "created": "2024-08-19T18:43:01.398Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "ffd7af68-433e-4fcf-97c4-8b7791056a52",
+            "name": "TRANSACTION HISTORY",
+            "containerId": "b4414fe8-4da7-4b3b-b925-7bc0a839d127",
+            "created": "2024-08-19T18:43:11.369Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "48ec88cf-6a2a-4a22-9f3b-113227bb2096",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "SENDMONEY",
+            "url": "http://localhost:3001/api/payments/send",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-08-19T18:43:17.940Z",
+            "modified": "2024-08-19T22:05:51.054Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"amount\": 3,\n    \"currency\": \"USD\",\n    \"fromAccountId\": \"2fffe7be-bc3e-4d7a-93e1-3af1c6f4ca30\",\n    \"toAccountId\": \"088b6f70-070e-4f2c-8bd4-0b9922fc7532\"\n  }",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4NTM5LCJpYXQiOjE3MjQxMDQ5MzksImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDkzOX1dLCJzZXNzaW9uX2lkIjoiYjliNTIxMTItZDNjMy00YmY0LTg2NmYtMDBlMTMwMGY1ZTlmIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.mPI8N75cL8pQm_bvQuhIXPY1e6iVWPSKImzyfprHe9w"
+            }
+        },
+        {
+            "_id": "57a57e34-746e-475b-b095-3dda1129595f",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "WITHDRAW",
+            "url": "http://localhost:3001/api/payments/withdraw",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-08-19T18:43:33.258Z",
+            "modified": "2024-08-19T22:09:51.248Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"accountId\": \"2fffe7be-bc3e-4d7a-93e1-3af1c6f4ca30\",\n  \"amount\": 3,\n  \"currency\": \"USD\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4NTM5LCJpYXQiOjE3MjQxMDQ5MzksImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDkzOX1dLCJzZXNzaW9uX2lkIjoiYjliNTIxMTItZDNjMy00YmY0LTg2NmYtMDBlMTMwMGY1ZTlmIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.mPI8N75cL8pQm_bvQuhIXPY1e6iVWPSKImzyfprHe9w"
+            }
+        },
+        {
+            "_id": "d68976ae-a448-45d1-b2c6-fb53bddad69d",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "f4ce4e24-4f05-479a-970c-675a3a6beb51",
+            "name": "LOGIN",
+            "url": "http://localhost:3000/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-08-19T18:43:51.831Z",
+            "modified": "2024-08-19T22:01:51.854Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"srarfian@gmail.com\",\n  \"password\":\"password\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "875ba098-769e-4f9f-986f-d92350b95a29",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "f4ce4e24-4f05-479a-970c-675a3a6beb51",
+            "name": "REGISTER",
+            "url": "http://localhost:3000/register",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-08-19T18:43:57.478Z",
+            "modified": "2024-08-19T19:57:55.670Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"rahvayana88@gmail.com\",\n  \"password\":\"password\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "aff9c6f3-e978-44c2-9e4e-52ef8ba36430",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "f4ce4e24-4f05-479a-970c-675a3a6beb51",
+            "name": "LOGOUT",
+            "url": "",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-08-19T18:44:02.188Z",
+            "modified": "2024-08-19T18:44:02.188Z",
+            "headers": []
+        },
+        {
+            "_id": "d5ca9fd9-0bfa-4071-b68c-7b0b495c4fc4",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "82062c1e-725a-405b-8773-646b5056ef88",
+            "name": "CREATE ACCOUNT",
+            "url": "http://localhost:3000/accounts",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-08-19T18:44:10.563Z",
+            "modified": "2024-08-19T21:59:44.885Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"accountType\":\"RAHVA 3\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyZWU0NDRkYi04Y2I3LTQ3YjItYmZhNy1lZjQ4MThlOGVhODciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4MzM3LCJpYXQiOjE3MjQxMDQ3MzcsImVtYWlsIjoicmFodmF5YW5hODhAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InJhaHZheWFuYTg4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiIyZWU0NDRkYi04Y2I3LTQ3YjItYmZhNy1lZjQ4MThlOGVhODcifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDczN31dLCJzZXNzaW9uX2lkIjoiZTJkZGExNWMtMGU5MC00NGIwLWJhMDUtNTBlM2QzYjViZjI3IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.ctvFsE3vO5dFOybavXMX0aEmknUte69uQFRWyhqJZ6E"
+            }
+        },
+        {
+            "_id": "08ea3da0-21da-478c-bfe4-bcb37d572a41",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "82062c1e-725a-405b-8773-646b5056ef88",
+            "name": "GET ALL ACCOUNT",
+            "url": "http://localhost:3000/accounts",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-08-19T18:44:21.540Z",
+            "modified": "2024-08-19T22:02:29.149Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4NTM5LCJpYXQiOjE3MjQxMDQ5MzksImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDkzOX1dLCJzZXNzaW9uX2lkIjoiYjliNTIxMTItZDNjMy00YmY0LTg2NmYtMDBlMTMwMGY1ZTlmIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.mPI8N75cL8pQm_bvQuhIXPY1e6iVWPSKImzyfprHe9w"
+            }
+        },
+        {
+            "_id": "5acb30cc-6159-47bd-94a3-d5c118eaedf3",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "82062c1e-725a-405b-8773-646b5056ef88",
+            "name": "GET ACCOUNT BY ID",
+            "url": "http://localhost:3000/accounts/088b6f70-070e-4f2c-8bd4-0b9922fc7532",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-08-19T18:44:29.062Z",
+            "modified": "2024-08-19T22:00:54.832Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyZWU0NDRkYi04Y2I3LTQ3YjItYmZhNy1lZjQ4MThlOGVhODciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4MzM3LCJpYXQiOjE3MjQxMDQ3MzcsImVtYWlsIjoicmFodmF5YW5hODhAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InJhaHZheWFuYTg4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiIyZWU0NDRkYi04Y2I3LTQ3YjItYmZhNy1lZjQ4MThlOGVhODcifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDczN31dLCJzZXNzaW9uX2lkIjoiZTJkZGExNWMtMGU5MC00NGIwLWJhMDUtNTBlM2QzYjViZjI3IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.ctvFsE3vO5dFOybavXMX0aEmknUte69uQFRWyhqJZ6E"
+            }
+        },
+        {
+            "_id": "16549418-dd8e-4d6b-965a-5ae02350d2bc",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "82062c1e-725a-405b-8773-646b5056ef88",
+            "name": "UPDATE ACCOUNT",
+            "url": "http://localhost:3000/accounts/088b6f70-070e-4f2c-8bd4-0b9922fc7532",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-08-19T18:44:35.045Z",
+            "modified": "2024-08-19T22:01:38.415Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"accountType\":\"TABUNGAN\",\n  \"balance\":100\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyZWU0NDRkYi04Y2I3LTQ3YjItYmZhNy1lZjQ4MThlOGVhODciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4MzM3LCJpYXQiOjE3MjQxMDQ3MzcsImVtYWlsIjoicmFodmF5YW5hODhAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InJhaHZheWFuYTg4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiIyZWU0NDRkYi04Y2I3LTQ3YjItYmZhNy1lZjQ4MThlOGVhODcifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDczN31dLCJzZXNzaW9uX2lkIjoiZTJkZGExNWMtMGU5MC00NGIwLWJhMDUtNTBlM2QzYjViZjI3IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.ctvFsE3vO5dFOybavXMX0aEmknUte69uQFRWyhqJZ6E"
+            }
+        },
+        {
+            "_id": "071f5f90-b3e6-47b2-a2ef-46b099eee4e1",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "82062c1e-725a-405b-8773-646b5056ef88",
+            "name": "DELETE ACCOUNT",
+            "url": "http://localhost:3000/accounts/2e0d97bd-dc3f-40f6-a6fd-c65c32b82803",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-08-19T18:44:43.670Z",
+            "modified": "2024-08-19T19:57:22.308Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTAwOTEwLCJpYXQiOjE3MjQwOTczMTAsImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDA5NzMxMH1dLCJzZXNzaW9uX2lkIjoiMzE0N2ZmMjUtOWQzYS00ODI3LTg2NWMtYWU0MTJkN2NjZmI3IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.Fbphyy2uTKHoAm8mYJq4ExmnPPNUZyVp56B6ZhqvujQ"
+            }
+        },
+        {
+            "_id": "1e4e96c9-409c-4709-9485-6a6487c29a63",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "ffd7af68-433e-4fcf-97c4-8b7791056a52",
+            "name": "GET TRANSACTION HISTORY",
+            "url": "http://localhost:3000/transactions/2fffe7be-bc3e-4d7a-93e1-3af1c6f4ca30",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-08-19T18:45:45.947Z",
+            "modified": "2024-08-19T22:49:42.468Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTExMzY3LCJpYXQiOjE3MjQxMDc3NjcsImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNzc2N31dLCJzZXNzaW9uX2lkIjoiN2U2ODAzMmYtYzUxYi00NmQ4LTgwYjctMzkyNjRhZDRlNTZmIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.htiSwKA9LOIxFWoIa_JNajw7aCVcEYRT5azZKYUN_4U"
+            }
+        },
+        {
+            "_id": "49cdaff6-0e84-401c-a6fc-38a59b2e5a2c",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "ffd7af68-433e-4fcf-97c4-8b7791056a52",
+            "name": "UPDATE TRANSACTION HISTORY",
+            "url": "http://localhost:3000/accounts/e727e107-7619-4dca-9636-ca65c5f139ee",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2024-08-19T18:46:09.869Z",
+            "modified": "2024-08-19T19:00:18.100Z",
+            "headers": []
+        },
+        {
+            "_id": "45d6f604-b68a-4d57-8c49-f498e2196646",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "ffd7af68-433e-4fcf-97c4-8b7791056a52",
+            "name": "DELETE TRANSACTION HISTORY",
+            "url": "http://localhost:3000/transactions/01489a4b-03e5-4180-88c9-2256acbf1516",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2024-08-19T18:46:20.588Z",
+            "modified": "2024-08-19T22:57:55.682Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTExMzY3LCJpYXQiOjE3MjQxMDc3NjcsImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNzc2N31dLCJzZXNzaW9uX2lkIjoiN2U2ODAzMmYtYzUxYi00NmQ4LTgwYjctMzkyNjRhZDRlNTZmIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.htiSwKA9LOIxFWoIa_JNajw7aCVcEYRT5azZKYUN_4U"
+            }
+        },
+        {
+            "_id": "4b91546d-8230-4d1a-a520-6a4c6b8d8696",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "GET TRANSACTION",
+            "url": "http://localhost:3001/api/payments/transactions",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-08-19T19:04:00.173Z",
+            "modified": "2024-08-19T22:10:50.904Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA4NTM5LCJpYXQiOjE3MjQxMDQ5MzksImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNDkzOX1dLCJzZXNzaW9uX2lkIjoiYjliNTIxMTItZDNjMy00YmY0LTg2NmYtMDBlMTMwMGY1ZTlmIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.mPI8N75cL8pQm_bvQuhIXPY1e6iVWPSKImzyfprHe9w"
+            }
+        },
+        {
+            "_id": "d19e0a7f-eb44-454b-b53e-49218a4ac2f9",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "Create Auto Debit/ Recurring Payment",
+            "url": "http://localhost:3001/api/payments/recurring",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-08-19T22:11:50.285Z",
+            "modified": "2024-08-19T22:37:20.962Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n  \"accountId\":\"2fffe7be-bc3e-4d7a-93e1-3af1c6f4ca30\",\n  \"amount\":7,\n  \"currency\":\"USD\", \n  \"interval\":\"WEEKLY\", \n  \"toAccountId\":\"088b6f70-070e-4f2c-8bd4-0b9922fc7532\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA5NDAwLCJpYXQiOjE3MjQxMDU4MDAsImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNTgwMH1dLCJzZXNzaW9uX2lkIjoiYzhjZDc1OGQtODM3NC00MTkyLTkzMDUtZmFjNzg5ODJjNGUwIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.zPkpXydKX2uSllCFgTWhPPlflnm8g2vIj5nMX-UHBzQ"
+            }
+        },
+        {
+            "_id": "8fdb6a90-3fc4-4fee-9896-9b28a7ba88f2",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "Get All Recurring/Auto Debit List",
+            "url": "http://localhost:3001/api/payments/recurring",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-08-19T22:29:55.424Z",
+            "modified": "2024-08-19T22:32:54.901Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA5NDAwLCJpYXQiOjE3MjQxMDU4MDAsImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNTgwMH1dLCJzZXNzaW9uX2lkIjoiYzhjZDc1OGQtODM3NC00MTkyLTkzMDUtZmFjNzg5ODJjNGUwIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.zPkpXydKX2uSllCFgTWhPPlflnm8g2vIj5nMX-UHBzQ"
+            }
+        },
+        {
+            "_id": "b8806cc1-d2e0-40aa-9cee-a71ccfd4684c",
+            "colId": "5ebacc80-78ef-4c00-adc1-92e20ef26c14",
+            "containerId": "2e51b170-583a-4c08-a766-1bcc96ccd2a9",
+            "name": "Deactive Auto Debit/Recurring Payment",
+            "url": "http://localhost:3001/api/payments/recurring/7ac56cf6-ea1e-4194-8175-a745ec692827",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-08-19T22:33:50.910Z",
+            "modified": "2024-08-19T22:34:18.470Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsImtpZCI6Ijk2Mnc0VTl5NHYxOTNXbDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FxdG1xeHN2bWJ1Z211c2tmamxyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTA5NDAwLCJpYXQiOjE3MjQxMDU4MDAsImVtYWlsIjoic3JhcmZpYW5AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6InNyYXJmaWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI4MDhlYjUxNi1jYzM5LTQ3NDgtYTI1Zi1jNjRlYzMwYWUyMjUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTcyNDEwNTgwMH1dLCJzZXNzaW9uX2lkIjoiYzhjZDc1OGQtODM3NC00MTkyLTkzMDUtZmFjNzg5ODJjNGUwIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.zPkpXydKX2uSllCFgTWhPPlflnm8g2vIj5nMX-UHBzQ"
+            }
+        }
+    ],
+    "ref": "UE6dG9r5F8SM1IQrGZE1qBZmfB_jHbYW_GgjS04g4wZlCj-o6h5ecI915hP-s5zedIXel7TsOOqpO08qez9N5Q"
+}
