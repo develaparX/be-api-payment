@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  account-manager:
+    build: ./account-manager
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/accountdb
+      - SUPABASE_URL=your_supabase_url
+      - SUPABASE_KEY=your_supabase_key
+    depends_on:
+      - db
+
+  payment-manager:
+    build: ./payment-manager
+    ports:
+      - "3001:3001"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/paymentdb
+      - SUPABASE_URL=your_supabase_url
+      - SUPABASE_KEY=your_supabase_key
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=accountdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

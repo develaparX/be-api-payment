@@ -42,8 +42,8 @@ Features:
 - Users need to register/log in and then be able to call APIs.
 - APIs for 2 operations send/withdraw. Account statements will be updated after the transaction is successful.
 - APIs to retrieve all accounts and transactions per account of the user.
-- Write Swagger docs for implemented APIs (Optional)
-- Auto Debit/Recurring Payments: Users should be able to set up recurring payments. These payments will automatically be processed at specified intervals. (Optional)
+- Write Swagger docs for implemented APIs 
+- Auto Debit/Recurring Payments: Users should be able to set up recurring payments. These payments will automatically be processed at specified intervals.
 
 ### Tech-stack:
 - Recommend using authentication 3rd party: Supertokens, Supabase...

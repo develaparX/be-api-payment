@@ -1,0 +1,28 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Transaction {
+    id            String   @id @default(uuid())
+    amount        Float
+    currency      String
+    fromAccountId String
+    toAddress     String?
+    status        String
+    type          String // Add this line if you want to use 'type'
+    timestamp     DateTime @default(now())
+}
+
+model RecurringPayment {
+    id              String   @id @default(uuid())
+    accountId       String
+    amount          Float
+    currency        String
+    interval        String
+    nextPaymentDate DateTime
+}
